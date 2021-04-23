@@ -2,3 +2,4 @@
 tsconfig.json
 /.vscode
 .env
+yarn-error.log
