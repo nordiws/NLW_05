@@ -1,10 +1,8 @@
-import express from 'express';
-import "./database";
-import { routes } from "./routes"
+import { http } from "./http"
+import dotenv from "dotenv"
+import "./websocket/client"
 
+dotenv.config();
+const PORT = process.env.PORT;
 
-const app = express();
-app.use(express.json());
-app.use(routes);
-
-app.listen(3000, () => console.log("Server is running on port 3000"));
+http.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

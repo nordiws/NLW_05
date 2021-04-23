@@ -24,6 +24,12 @@ class UsersService {
         await this.userRepository.save(user);
         return user;
     }
+
+    async findByEmail(email: string) {
+        const user = await this.userRepository.findOne({ email });
+
+        return user;
+    }
 }
 
 export { UsersService }
