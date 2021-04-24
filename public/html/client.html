@@ -21,11 +21,9 @@
     </div>
 
     <div class="text_support">
-      <script id="email-template" type="text/template">
-          <div class="client">
-            <span class="name">{{email}}</span>
-        </script>
       <script id="message-user-template" type="text/template">
+        <div class="client">
+          <span class="name">{{email}}</span>
             <span class="client message">
               {{message}}
               <!-- <label class="date">{{date}}</label> -->
@@ -92,6 +90,7 @@
   function onLoad() {
     fetch("http://localhost:3000/settings/admin").then((result) =>
       result.json().then((response) => {
+        console.log(response);
         const buttonSupport = document.getElementById("btn_support");
         if (!response.chat) {
           buttonSupport.style.display = "none";

@@ -21,6 +21,7 @@ class MessagesService {
             text,
             user_id
         });
+
         await this.messagesRepository.save(message);
         return message;
     }

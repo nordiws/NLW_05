@@ -1,8 +1,5 @@
 import { http } from "./http"
-import dotenv from "dotenv"
 import "./websocket/client"
+import "./websocket/admin"
 
-dotenv.config();
-const PORT = process.env.PORT;
-
-http.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+http.listen(3000, () => console.log(`Server is running on port 3000`));
